@@ -18,7 +18,7 @@ function check_second_area($x, $y, $r){
 }
 
 function check_third_area($x, $y, $r){
-    return ($x>=0 && $y<=0 && $x<=$r && y>=$r);
+    return ($x>=0 && $y<=0 && $x<=$r && $y>=$r);
 }
 $is_inside = check_first_area($x, $y, $r) || check_second_area($x, $y, $r) || check_third_area($x, $y, $r);
 $hit_fact = $is_inside ? "Hit": "Miss";
