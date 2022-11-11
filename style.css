@@ -1,0 +1,87 @@
+#main-page{
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+}
+/*селекторов псевдоклассов */
+h4:first-child{
+    color: snow;
+}
+/*селекторов дочерних элементов */
+h4>span{
+    color: white;
+    text-decoration: underline;
+}
+/*селекторов потомств*/
+h4 span{
+    font-style: oblique;
+}
+
+#head-box{
+    padding: 30px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #494848;
+    border-radius: 20px;
+}
+body {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Open Sans", "Arial", sans-serif;
+    background-color: #2a2828;
+}
+.content-box{
+    height: 400px;
+}
+#graph-box{
+    background-color: #494848;
+    border-radius: 20px;
+}
+#value-box{
+    background-color: #494848;
+    border-radius: 20px;
+    width: 50%;
+}
+.inform-box{
+    text-align: center;
+    background-color: #494848;
+    border-radius: 20px;
+}
+td{
+    padding: 20px;
+}
+.graph-img {
+    width: 200px;
+    height: 200px;
+}
+.cords{
+    display: flex;
+}
+.scroll-box{
+    bottom: 0;
+    right: 0;
+    top: 54px;
+    width: 100%;
+    overflow-y: scroll;
+    height: 300px;
+}
+#result-table{
+    width: 100%;
+    border: 10px;
+
+}
+.input{
+    margin: 30px;
+}
+.result-title{
+    text-align: center;
+}
+.graph-title{
+    text-align: center;
+}
+.graph{
+    text-align: center;
+}
+#variant-text{
+    float: right;
+}
