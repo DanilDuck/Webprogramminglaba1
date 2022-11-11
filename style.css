@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 1024px;
     margin: auto;
+    border-spacing: 20px;
 }
 /*селекторов псевдоклассов */
 h4:first-child{
@@ -23,6 +24,16 @@ h4 span{
     color: #ffffff;
     background-color: #494848;
     border-radius: 20px;
+    box-shadow: 0 5px 0px #3c354a;
+    transition: 1s;
+}
+#head-box:hover{
+    transform: scale(1.15);
+}
+.git-img{
+    width: 30px;
+    height: 30px;
+    text-align: center;
 }
 body {
     color: #ffffff;
@@ -37,18 +48,34 @@ body {
     background-color: #494848;
     border-radius: 20px;
 }
+.graph:hover{
+    transform: scale(1.30);
+}
 #value-box{
     background-color: #494848;
     border-radius: 20px;
     width: 50%;
+    box-shadow: 5px 5px 5px 5px #3c354a;
+    transition: 1s;
+}
+#value-box:hover{
+    transform: scale(1.15);
+}
+.inform-box:hover{
+    transform: scale(1.15);
+    box-shadow: 5px 5px 5px 5px #3c354a;
+}
+#graph-box{
+    box-shadow: 0 5px 0px #3c354a;
 }
 .inform-box{
     text-align: center;
     background-color: #494848;
     border-radius: 20px;
+    transition: 1s;
 }
 td{
-    padding: 20px;
+
 }
 .graph-img {
     width: 200px;
@@ -81,6 +108,7 @@ td{
 }
 .graph{
     text-align: center;
+    transition: 1s;
 }
 #variant-text{
     float: right;
