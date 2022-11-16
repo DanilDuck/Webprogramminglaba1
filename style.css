@@ -63,7 +63,6 @@ body {
 }
 .inform-box:hover{
     transform: scale(1.15);
-    box-shadow: 5px 5px 5px 5px #3c354a;
 }
 #graph-box{
     box-shadow: 0 5px 0px #3c354a;
@@ -73,9 +72,31 @@ body {
     background-color: #494848;
     border-radius: 20px;
     transition: 1s;
+    box-shadow: 5px 5px 5px 5px #3c354a;
 }
-td{
-
+.validate{
+    border-radius: 5px;
+    width: 77px;
+    box-shadow: 1px 1px 1px 1px #2f2d2d;
+    transition: 0.1s;
+}
+.resetDate{
+    border-radius: 5px;
+    width: 77px;
+    box-shadow: 1px 1px 1px 1px #2f2d2d;
+    transition: 0.1s;
+}
+.resetDate:active{
+    background:rgb(116, 248, 99);
+    transform: scale(0.95);
+}
+.validate:active{
+    background: rgb(116, 248, 99);
+    transform: scale(0.95);
+}
+#ystring{
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px #2f2d2d;
 }
 .graph-img {
     width: 200px;
@@ -109,6 +130,13 @@ td{
 .graph{
     text-align: center;
     transition: 1s;
+}
+.anime-gif{
+    height: 400px;
+    right: 50px;
+    position: fixed;
+    bottom: 0;
+    filter: drop-shadow(0 5px 16px rgba(0, 0, 0, 0.5));
 }
 #variant-text{
     float: right;
