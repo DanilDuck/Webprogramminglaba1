@@ -3,7 +3,7 @@ var validateButton = form.querySelector('.validate')
 var fields= document.querySelectorAll('.validate')
 var xCoord = document.querySelectorAll(".x");
 var yCoord = document.querySelector(".y");
-var rCoord = document.querySelector(".r");
+var rCoord = document.querySelectorAll(".r");
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
@@ -24,14 +24,24 @@ function checkSelection(values) {
     for(let i=0; i<values.length; i++){
         if(values[i].checked) return true;
     }
-    var error = createError('пустое поле');
+    var error = createError('Пустое поле');
     values[0].parentElement.insertBefore(error, values[0]);
     return false;
+}
+function checkString(coordinate){
+    if(!isNumber(coordinate.value)) {
+        let exc = createError('Пустое поле');
+        coordinate.parentElement.insertBefore(exc, coordinate);
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 function validateCoordinate(coordinate){
     if(coordinate.value){
         if(coordinate.value<-3 || coordinate.value>3 || !isNumber(coordinate.value)){
-            var error = createError('Неправильное число')
+            let error = createError('Неправильное число')
             coordinate.parentElement.insertBefore(error, coordinate)
             return false;
         }
@@ -39,12 +49,12 @@ function validateCoordinate(coordinate){
     }
 }
 function validateData(){
-    return checkSelection(xCoord)&& validateCoordinate(yCoord) && checkSelection(xCoord);
+    return checkSelection(xCoord)&& validateCoordinate(yCoord) && checkSelection(rCoord);
 }
 $("#input-form").on("submit", function (event) {
     event.preventDefault();
     removeMsg();
-    if (!validateData()) {
+    if (!validateData() && checkString(yCoord)) {
         console.log("post canceled")
         return
     }

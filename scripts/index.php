@@ -40,7 +40,4 @@ foreach ($_SESSION['data'] as $elem){
     echo "</tr>";
 }
 
-
-
-
 ?>
