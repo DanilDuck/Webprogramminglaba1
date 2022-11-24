@@ -28,16 +28,6 @@ function checkSelection(values) {
     values[0].parentElement.insertBefore(error, values[0]);
     return false;
 }
-function checkString(coordinate){
-    if(!isNumber(coordinate.value)) {
-        let exc = createError('Пустое поле');
-        coordinate.parentElement.insertBefore(exc, coordinate);
-        return true;
-    }
-    else {
-        return false;
-    }
-}
 function validateCoordinate(coordinate){
     if(coordinate.value){
         if(coordinate.value<-3 || coordinate.value>3 || !isNumber(coordinate.value)){
@@ -47,6 +37,9 @@ function validateCoordinate(coordinate){
         }
         return true
     }
+    let error = createError('Пустое поле ввода')
+    coordinate.parentElement.insertBefore(error, coordinate)
+    return false;
 }
 function validateData(){
     return checkSelection(xCoord)&& validateCoordinate(yCoord) && checkSelection(rCoord);
@@ -54,14 +47,14 @@ function validateData(){
 $("#input-form").on("submit", function (event) {
     event.preventDefault();
     removeMsg();
-    if (!validateData() && checkString(yCoord)) {
+    if (!validateData()) {
         console.log("post canceled")
         return
     }
     console.log("data sending...")
     console.log($(this).serialize());
     $.ajax({
-        url: 'scripts/index.php',
+        url: 'scripts/submit.php',
         method: "POST",
         data: $(this).serialize() + "&timezone=" + new Date().getTimezoneOffset(),
         dataType: "html",
@@ -79,7 +72,7 @@ $("#input-form").on("submit", function (event) {
 });
 $(".resetDate").on("click",function(event){
     $.ajax({
-        url: 'scripts/clear.php',
+        url: 'scripts/reset.php',
         method: "POST",
         dataType: "html",
         success: function(data){
@@ -91,5 +84,20 @@ $(".resetDate").on("click",function(event){
         },
     })
 })
+$(document).ready(function(){
+    $.ajax({
+        url: 'scripts/submit.php',
+        method: "POST",
+        dataType: "html",
+        success: function(data){
+            console.log(data);
+            $("#table_out").html(data);
+        },
+        error: function(error){
+            console.log(error);
+        },
+    })
+})
+
 
 
